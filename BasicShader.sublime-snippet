@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+Shader "Temp/Basic" {
+	Properties {
+
+	}
+	SubShader {
+	$0
+	}
+
+	Fallback \"Diffuse\"
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Shader</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.shader</scope>
+</snippet>
