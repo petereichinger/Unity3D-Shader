@@ -10,7 +10,7 @@
 	  "name": "comment.source.shader",
 	  "comment": "Comment"
 	},
-	{ "match": "(?<=[, \\s\\(\\)])(((float|half|fixed)[2-4]?)|Range\\(\\s*\\d*\\.?\\d*\\s*,\\s*\\d*\\.?\\d*\\s*\\)|sampler2D|void|2D|Color)(?=[,\\s\\(\\)])",
+	{ "match": "(?<=[, \\s\\(\\)])(((float|half|fixed)[2-4]?)|Range\\([-+]?([0-9]+(\\.[0-9]+)?|\\.[0-9]+),[-+]?([0-9]+(\\.[0-9]+)?|\\.[0-9]+)\\)|sampler2D|void|2D|Color)(?=[,\\s\\(\\)])",
 	  "name": "storage.type.source.shader",
 	  "comment": "Type"
 	},
@@ -24,6 +24,10 @@
 	},
 	{ "match": "tex2D|UnpackNormal|saturate|dot|normalize|clip|frac",
 	  "name": "constant.source.shader",
+	  "comment": "Type"
+	},
+	{ "match": "[\\(]?([-+]?([0-9]+(\\.[0-9]+)?|\\.[0-9]+)[\\s]*,[\\s]*)*([-+]?([0-9]+(\\.[0-9]+)?|\\.[0-9]+))+[\\)]?",
+	  "name": "constant.numeric.source.shader",
 	  "comment": "Type"
 	}
   ],
