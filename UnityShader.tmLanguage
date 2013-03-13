@@ -22,7 +22,7 @@
 			<key>comment</key>
 			<string>Comment</string>
 			<key>match</key>
-			<string>\\\\.*$</string>
+			<string>//.*$</string>
 			<key>name</key>
 			<string>comment.source.shader</string>
 		</dict>
@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>\s((float|half|fixed)[1-4])|sampler2D|void\s</string>
+			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|Range\(\s*\d*\.?\d*\s*,\s*\d*\.?\d*\s*\)|sampler2D|void|2D|Color)(?=[,\s\(\)])</string>
 			<key>name</key>
 			<string>storage.type.source.shader</string>
 		</dict>
@@ -46,7 +46,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>^\s*#pragma.*$</string>
+			<string>^\s*#(pragma|include).*$</string>
 			<key>name</key>
 			<string>string.meta.source.shader</string>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>tex2D</string>
+			<string>tex2D|UnpackNormal|saturate|dot|normalize|clip|frac</string>
 			<key>name</key>
 			<string>constant.source.shader</string>
 		</dict>
