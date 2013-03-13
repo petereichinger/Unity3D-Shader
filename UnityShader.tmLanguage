@@ -14,7 +14,7 @@
 			<key>comment</key>
 			<string>Keywords</string>
 			<key>match</key>
-			<string>(Sub)*Shader|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG</string>
+			<string>(Sub)*Shader|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull</string>
 			<key>name</key>
 			<string>keyword.source.shader</string>
 		</dict>
@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|Range\([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+),[-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)\)|sampler2D|void|2D|Color)(?=[,\s\(\)])</string>
+			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|Range\([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+),[-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)\)|sampler(CUBE|[23]D)|void|2D|Color|struct)(?=[,\s\(\)])</string>
 			<key>name</key>
 			<string>storage.type.source.shader</string>
 		</dict>
@@ -46,7 +46,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>^\s*#(pragma|include).*$</string>
+			<string>^\s*#(pragma|include|ifdef|endif).*$</string>
 			<key>name</key>
 			<string>string.meta.source.shader</string>
 		</dict>
@@ -54,7 +54,7 @@
 			<key>comment</key>
 			<string>Type</string>
 			<key>match</key>
-			<string>tex2D|UnpackNormal|saturate|dot|normalize|clip|frac</string>
+			<string>tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul</string>
 			<key>name</key>
 			<string>constant.source.shader</string>
 		</dict>
