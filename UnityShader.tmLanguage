@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>shader</string>
+	</array>
+	<key>name</key>
+	<string>Unity Shader</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Keywords</string>
+			<key>match</key>
+			<string>(Sub)*Shader|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG</string>
+			<key>name</key>
+			<string>keyword.source.shader</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Comment</string>
+			<key>match</key>
+			<string>\\\\.*$</string>
+			<key>name</key>
+			<string>comment.source.shader</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type</string>
+			<key>match</key>
+			<string>\s((float|half|fixed)[1-4])|sampler2D|void\s</string>
+			<key>name</key>
+			<string>storage.type.source.shader</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type</string>
+			<key>match</key>
+			<string>"[^"]+"</string>
+			<key>name</key>
+			<string>constant.string.source.shader</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type</string>
+			<key>match</key>
+			<string>^\s*#pragma.*$</string>
+			<key>name</key>
+			<string>string.meta.source.shader</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Type</string>
+			<key>match</key>
+			<string>tex2D</string>
+			<key>name</key>
+			<string>constant.source.shader</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.shader</string>
+	<key>uuid</key>
+	<string>813f15c8-79fd-4617-8afe-2495dffbf4e8</string>
+</dict>
+</plist>

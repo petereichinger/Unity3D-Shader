@@ -1,0 +1,33 @@
+{ "name": "Unity Shader",
+  "scopeName": "source.shader",
+  "fileTypes": ["shader"],
+  "patterns": [
+	{ "match": "(Sub)*Shader|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG",
+	  "name": "keyword.source.shader",
+	  "comment": "Keywords"
+	},
+	{ "match": "\\\\\\\\.*$",
+	  "name": "comment.source.shader",
+	  "comment": "Comment"
+	},
+	{ "match": "\\s((float|half|fixed)[1-4])|sampler2D|void\\s",
+	  "name": "storage.type.source.shader",
+	  "comment": "Type"
+	},
+	{ "match": "\"[^\"]+\"",
+	  "name": "constant.string.source.shader",
+	  "comment": "Type"
+	},
+	{ "match": "^\\s*#pragma.*$",
+	  "name": "string.meta.source.shader",
+	  "comment": "Type"
+	}
+	,
+	{ "match": "tex2D",
+	  "name": "constant.source.shader",
+	  "comment": "Type"
+	}
+
+  ],
+  "uuid": "813f15c8-79fd-4617-8afe-2495dffbf4e8"
+}
