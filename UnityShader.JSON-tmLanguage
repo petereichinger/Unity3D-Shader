@@ -22,6 +22,10 @@
 	  "name": "string.meta.source.shader",
 	  "comment": "compiler directive"
 	},
+	{"match": "(inout)",
+	  "name": "storage.modifier.source.shader",
+	  "comment": "storage modifier"		
+	},
 	{ "match": "tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine",
 	  "name": "constant.source.shader",
 	  "comment": "function"
