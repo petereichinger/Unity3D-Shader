@@ -40,7 +40,7 @@
 			<key>match</key>
 			<string>"[^"]+"</string>
 			<key>name</key>
-			<string>constant.string.source.shader</string>
+			<string>string.quoted.double.source.shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
