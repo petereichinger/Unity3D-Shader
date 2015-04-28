@@ -14,7 +14,7 @@
 			<key>comment</key>
 			<string>keywords</string>
 			<key>match</key>
-			<string>(Sub)*Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass</string>
+			<string>(Sub)*Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return</string>
 			<key>name</key>
 			<string>keyword.source.shader</string>
 		</dict>
