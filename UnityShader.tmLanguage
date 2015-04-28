@@ -46,7 +46,7 @@
 			<key>comment</key>
 			<string>compiler directive</string>
 			<key>match</key>
-			<string>^\s*#(pragma|include|ifdef|endif).*$</string>
+			<string>^\s*#(pragma|include|ifdef|endif|if|define).*$</string>
 			<key>name</key>
 			<string>string.meta.source.shader</string>
 		</dict>
