@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>type</string>
 			<key>match</key>
-			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|Range\([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+),[-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)\)|sampler(CUBE|[23]D)|void|2D|Color|struct)(?=[,\s\(\)])</string>
+			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|Range\([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+),[-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)\)|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])</string>
 			<key>name</key>
 			<string>storage.type.source.shader</string>
 		</dict>
