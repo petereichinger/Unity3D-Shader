@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -12,35 +12,35 @@
 	<array>
 		<dict>
 			<key>comment</key>
-			<string>keywords</string>
+			<string>Keywords</string>
 			<key>match</key>
-			<string>(Sub)*Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return</string>
+			<string>(Sub)?Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return</string>
 			<key>name</key>
-			<string>keyword.source.shader</string>
+			<string>keyword.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>comment</string>
+			<string>Comment</string>
 			<key>match</key>
 			<string>//.*$</string>
 			<key>name</key>
-			<string>comment.source.shader</string>
+			<string>comment.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>type</string>
+			<string>Types</string>
 			<key>match</key>
-			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|Range\([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+),[-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)\)|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])</string>
+			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])</string>
 			<key>name</key>
-			<string>storage.type.source.shader</string>
+			<string>storage.type.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>string literal</string>
+			<string>String</string>
 			<key>match</key>
-			<string>"[^"]+"</string>
+			<string>\"[^\"]+\"</string>
 			<key>name</key>
-			<string>string.quoted.double.source.shader</string>
+			<string>string.quoted.double.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -48,36 +48,28 @@
 			<key>match</key>
 			<string>^\s*#(pragma|include|ifdef|endif|if|define).*$</string>
 			<key>name</key>
-			<string>string.meta.source.shader</string>
+			<string>string.meta.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>storage modifier</string>
-			<key>match</key>
-			<string>\s*(inout)\s*</string>
-			<key>name</key>
-			<string>storage.modifier.source.shader</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>function</string>
+			<string>functions</string>
 			<key>match</key>
 			<string>tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine</string>
 			<key>name</key>
-			<string>constant.source.shader</string>
+			<string>function-call.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>float literal</string>
+			<string>number literals</string>
 			<key>match</key>
-			<string>[^A-Za-z][\(]?([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+))+[\)]?[fF]?[^A-Za-z]</string>
+			<string>\b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b</string>
 			<key>name</key>
-			<string>constant.numeric.source.shader</string>
+			<string>constant.numeric.source.unity_shader</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
-	<string>source.shader</string>
+	<string>source.unity_shader</string>
 	<key>uuid</key>
-	<string>813f15c8-79fd-4617-8afe-2495dffbf4e8</string>
+	<string>e3872ec7-60d7-4cc2-bf8f-57da56c339f2</string>
 </dict>
 </plist>

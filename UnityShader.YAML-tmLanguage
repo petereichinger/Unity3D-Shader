@@ -1,0 +1,30 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Unity Shader
+scopeName: source.unity_shader
+fileTypes: [shader]
+uuid: e3872ec7-60d7-4cc2-bf8f-57da56c339f2
+
+patterns:
+- comment: Keywords
+  name: keyword.source.unity_shader
+  match: (Sub)?Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return
+- comment: Comment
+  name: comment.source.unity_shader
+  match: //.*$
+- comment: Types
+  name: storage.type.source.unity_shader
+  match: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])
+- comment: String
+  name: string.quoted.double.source.unity_shader
+  match: \"[^\"]+\"
+- comment: compiler directive
+  name: string.meta.source.unity_shader
+  match: ^\s*#(pragma|include|ifdef|endif|if|define).*$
+- comment: functions
+  name: function-call.source.unity_shader
+  match: tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine
+- comment: number literals
+  name: constant.numeric.source.unity_shader
+  match: \b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b
+...
