@@ -1,0 +1,9 @@
+Unity Shader Highlighter Version 0.2.0
+--------------------------------------
+
+Minor improvements to highlighting:
+
+- Add C++ highlighting between CGPROGRAM...ENDCG
+- Preprocessor statements (beginning with #) are highlighted better
+- More functions highlighted
+- Empty string highlighting
