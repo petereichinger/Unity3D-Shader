@@ -14,7 +14,7 @@
 			<key>comment</key>
 			<string>Keywords</string>
 			<key>match</key>
-			<string>(Sub)?Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return</string>
+			<string>(Sub)?Shader|Category|Properties|FallBack|Tags|LOD|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return</string>
 			<key>name</key>
 			<string>keyword.source.unity_shader</string>
 		</dict>
@@ -38,25 +38,38 @@
 			<key>comment</key>
 			<string>String</string>
 			<key>match</key>
-			<string>\"[^\"]+\"</string>
+			<string>\"[^\"]*\"</string>
 			<key>name</key>
 			<string>string.quoted.double.source.unity_shader</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>meta.preprocessor.source.unity_shader</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.preprocessor.source.unity_shader</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>compiler directive</string>
 			<key>match</key>
-			<string>^\s*#(pragma|include|ifdef|endif|if|define).*$</string>
+			<string>(#)(pragma|include|ifdef|endif|if|define).*</string>
 			<key>name</key>
-			<string>string.meta.source.unity_shader</string>
+			<string>meta.preprocessor.source.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
 			<string>functions</string>
 			<key>match</key>
-			<string>tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine</string>
+			<string>(length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)</string>
 			<key>name</key>
-			<string>function-call.source.unity_shader</string>
+			<string>support.function.any-method.unity_shader</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -65,6 +78,47 @@
 			<string>\b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b</string>
 			<key>name</key>
 			<string>constant.numeric.source.unity_shader</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(CGPROGRAM)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.unity_shader</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>CGPROGRAM -- ENDCG</string>
+			<key>end</key>
+			<string>(ENDCG)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.unity_shader</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>cgprogram.source.unity_shader</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.c</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>.</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
 	<key>scopeName</key>

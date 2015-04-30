@@ -8,7 +8,7 @@ uuid: e3872ec7-60d7-4cc2-bf8f-57da56c339f2
 patterns:
 - comment: Keywords
   name: keyword.source.unity_shader
-  match: (Sub)?Shader|Category|Properties|FallBack|Tags|LOD|CGPROGRAM|ENDCG|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return
+  match: (Sub)?Shader|Category|Properties|FallBack|Tags|LOD|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return
 - comment: Comment
   name: comment.source.unity_shader
   match: //.*$
@@ -17,14 +17,30 @@ patterns:
   match: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])
 - comment: String
   name: string.quoted.double.source.unity_shader
-  match: \"[^\"]+\"
+  match: \"[^\"]*\"
 - comment: compiler directive
-  name: string.meta.source.unity_shader
-  match: ^\s*#(pragma|include|ifdef|endif|if|define).*$
+  name: meta.preprocessor.source.unity_shader
+  match: (#)(pragma|include|ifdef|endif|if|define).*
+  captures:
+    '1': {name: meta.preprocessor.source.unity_shader}
+    '2': {name: keyword.control.preprocessor.source.unity_shader}
+    # '3': {name: meta.preprocessor.source.unity_shader}
 - comment: functions
-  name: function-call.source.unity_shader
-  match: tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine
+  name: support.function.any-method.unity_shader
+  match: (length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)
 - comment: number literals
   name: constant.numeric.source.unity_shader
   match: \b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b
+- comment: CGPROGRAM -- ENDCG
+  name: cgprogram.source.unity_shader
+  begin: (CGPROGRAM)
+  end: (ENDCG)
+  beginCaptures:
+    '1': {name: keyword.source.unity_shader}
+  endCaptures:
+    '1': {name: keyword.source.unity_shader}
+  patterns:
+  - include: source.c
+  - include: $self
+  - match: .
 ...
