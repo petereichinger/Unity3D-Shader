@@ -2,7 +2,7 @@
 ---
 name: Unity Shader
 scopeName: source.unity_shader
-fileTypes: [shader]
+fileTypes: [shader cginc]
 uuid: e3872ec7-60d7-4cc2-bf8f-57da56c339f2
 
 patterns:
