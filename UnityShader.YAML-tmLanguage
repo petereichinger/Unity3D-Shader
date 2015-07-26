@@ -14,7 +14,7 @@ patterns:
   match: //.*$
 - comment: Types
   name: storage.type.source.unity_shader
-  match: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])
+  match: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat|[Rr]ange|[Vv]ector[234]?)(?=[,\s\(\)])
 - comment: String
   name: string.quoted.double.source.unity_shader
   match: \"[^\"]*\"

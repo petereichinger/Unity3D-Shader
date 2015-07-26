@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>Types</string>
 			<key>match</key>
-			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat)(?=[,\s\(\)])</string>
+			<string>(?&lt;=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat|[Rr]ange|[Vv]ector[234]?)(?=[,\s\(\)])</string>
 			<key>name</key>
 			<string>storage.type.source.unity_shader</string>
 		</dict>
