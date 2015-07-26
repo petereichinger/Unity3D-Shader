@@ -1,0 +1,8 @@
+Unity Shader Highlighter Version 0.3.0
+--------------------------------------
+
+Minor improvements to highlighting:
+
+- Add cginc files to supported files
+- Functions are not highlighted anymore when part of another symbol (e.g. `acrossa` should not be highlighted anymore)
+- Add Range and Vector Property highlights.
