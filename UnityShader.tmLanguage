@@ -64,12 +64,18 @@
 			<string>meta.preprocessor.source.unity_shader</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.any-method.unity_shader</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>functions</string>
 			<key>match</key>
-			<string>(length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)</string>
-			<key>name</key>
-			<string>support.function.any-method.unity_shader</string>
+			<string>(^|[, \s\(\)])(length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)($|[, \s\(\)])</string>
 		</dict>
 		<dict>
 			<key>comment</key>

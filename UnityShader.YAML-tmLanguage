@@ -26,8 +26,9 @@ patterns:
     '2': {name: keyword.control.preprocessor.source.unity_shader}
     # '3': {name: meta.preprocessor.source.unity_shader}
 - comment: functions
-  name: support.function.any-method.unity_shader
-  match: (length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)
+  match: (^|[, \s\(\)])(length|cross|pow|tex2D|UnpackNormal|saturate|dot|normalize|clip|frac|mul|TRANSFORM_TEX|SetTexture|combine|UnityPixelSnap)($|[, \s\(\)])
+  captures:
+    '2': {name: support.function.any-method.unity_shader}
 - comment: number literals
   name: constant.numeric.source.unity_shader
   match: \b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b
