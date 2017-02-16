@@ -1,0 +1,9 @@
+%YAML 1.2
+---
+name: Unity Compute Shader
+file_extensions: [compute]
+scope: source.unity_compute_shader
+first_line_match: (#pragma kernel.*)
+contexts:
+  main:
+    - include: scope:source.c++
