@@ -1,0 +1,6 @@
+Unity Shader Highlighter Version 0.3.1
+--------------------------------------
+
+- Replace tmLanguage with sublime-syntax
+- Add hightlighting for compute shaders
+    + This simply uses C++ language hightlighting for now
