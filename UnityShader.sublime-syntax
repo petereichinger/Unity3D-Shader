@@ -1,0 +1,41 @@
+%YAML 1.2
+---
+name: Unity Shader
+file_extensions: [shader cginc]
+scope: source.unity_shader
+first_line_match: (Shader \".*\")
+variables:
+  types: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat|[Rr]ange|[Vv]ector[234]?)(?=[,\s\(\)])
+contexts:
+  main:
+  - comment: Keywords
+    scope: keyword.source.unity_shader
+    match: (Sub)?Shader|Category|Properties|Fall[Bb]ack|Tags|LOD|Cull|Blend|AlphaTest|ColorMask|Lighting|ZWrite|BindChannels|Pass|return
+  - comment: Comment
+    scope: comment.source.unity_shader
+    match: //.*$
+  - comment: Types
+    scope: storage.type.source.unity_shader
+    match: '{{types}}'
+  - comment: String
+    scope: string.quoted.double.source.unity_shader
+    match: \".*\"
+  - comment: Preprocessor
+    scope: meta.preprocessor.source.unity_shader
+    match: ^(\#)(pragma|include|ifdef|endif|if|define).*$
+    captures:
+      1: keyword.control.source.unity_shader
+      2: keyword.control.source.unity_shader
+  - comment: number literals
+    scope: constant.numeric.source.unity_shader
+    match: \b([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[\s]*,[\s]*)*([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+)[fF]?)+\b
+
+  - comment: CGPROGRAM
+    match: CGPROGRAM
+    push: cgprogram_main
+    with_prototype:
+      - match: (?=ENDCG)
+        pop: true
+        
+  cgprogram_main:
+    - include: scope:source.c
