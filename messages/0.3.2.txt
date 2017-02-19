@@ -1,0 +1,4 @@
+Unity Shader Highlighter Version 0.3.2
+--------------------------------------
+
+- Highlight shader specific keywords inside CGPROGRAM/ENDCG and in .compute files
