@@ -5,7 +5,8 @@ file_extensions: [shader cginc]
 scope: source.unity_shader
 first_line_match: (Shader \".*\")
 variables:
-  types: (?<=[, \s\(\)])(((float|half|fixed)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat|[Rr]ange|[Vv]ector[234]?)(?=[,\s\(\)])
+  types: (?<=[, \s\(\)])(((float|half|fixed|u?int)[2-4]?)|SurfaceOutput|bool|sampler(CUBE|[23]D)|void|2D|Color|struct|[Ff]loat|[Rr]ange|[Vv]ector[234]?)(?=[,\s\(\)])
+  types_cg: 'float[2-4]'
 contexts:
   main:
   - comment: Keywords
@@ -34,8 +35,12 @@ contexts:
     match: CGPROGRAM
     push: cgprogram_main
     with_prototype:
+      - match: '((float|half|fixed|u?int)[2-4]|(RW)?StructuredBuffer)'
+        scope: storage.type.source.unity_shader
+      - match: '(uniform|point|inout)'
+        scope: storage.modifier.source.unity_shader
       - match: (?=ENDCG)
         pop: true
         
   cgprogram_main:
-    - include: scope:source.c
+    - include: scope:source.c++

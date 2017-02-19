@@ -6,4 +6,12 @@ scope: source.unity_compute_shader
 first_line_match: (#pragma kernel.*)
 contexts:
   main:
+    - match: ""
+      push: compute_shader_main
+      with_prototype:
+        - match: '((float|half|fixed|u?int)[2-4]|(RW)?StructuredBuffer)'
+          scope: storage.type.source.unity_shader
+        - match: '(uniform|point|inout)'
+          scope: storage.modifier.source.unity_shader
+  compute_shader_main:
     - include: scope:source.c++
