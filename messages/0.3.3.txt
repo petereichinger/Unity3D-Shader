@@ -1,0 +1,4 @@
+Unity Shader Highlighter Version 0.3.3
+--------------------------------------
+
+- Fix not being able to save files
